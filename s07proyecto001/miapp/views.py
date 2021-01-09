@@ -62,6 +62,11 @@ def rango2(request, a,b):
                 Resultado : <br>
                 <ul>
     """
+    if a>b:
+        c=a
+        a=b
+        b=c
+        
     while a<=b:
         resultado += f"<li> {a} </li>"
         a+=1
