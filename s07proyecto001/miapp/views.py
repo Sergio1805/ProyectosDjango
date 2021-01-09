@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 layout = """
@@ -16,27 +16,19 @@ layout = """
             <a href="/rango">Mostrar números [a;b]</a>
         </li>
         <li>
-            <a href="/rango2/10/20">Mostrar números(Parámetros) [a;b]</a>
+            <a href="/rango2">Mostrar números(Parámetros) [a;b]</a>
         </li>
     </ul>
     <hr/>
 
 """
 def index(request):
-    mensaje = """
-            <h1> INICIO </h1>
-
-              """
-    return HttpResponse(layout + mensaje)
+   
+    return render(request, 'index.html')
 
 def saludo(request):
-    mensaje ="""
-            <h1> Bienvenidos a la UNTELS </h1>
-            <h2> FACULTAD DE INGENIERÍA <h2>
-            <h3> INGENIERÍA DE SISTEMAS </h3>
-            <h4> LP3 Flor Cerdán </h4>
-            """
-    return HttpResponse(layout + mensaje)
+    
+    return render(request, 'saludo.html')
 
 def rango(request):
     a =10
@@ -54,7 +46,7 @@ def rango(request):
     return HttpResponse(layout + resultado)   
 
 
-def rango2(request, a,b):
+def rango2(request, a=0 ,b=100):
    
     resultado = f"""
                 <h2> Rango con parámetros </h2>
@@ -63,10 +55,8 @@ def rango2(request, a,b):
                 <ul>
     """
     if a>b:
-        c=a
-        a=b
-        b=c
-        
+        return redirect('rango2',a=b,b=a)
+
     while a<=b:
         resultado += f"<li> {a} </li>"
         a+=1
