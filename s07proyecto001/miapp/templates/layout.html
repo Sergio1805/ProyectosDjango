@@ -1,0 +1,75 @@
+
+<html lang="es">
+
+<html>
+    
+    <head>
+        <meta charset = "utf-8"/>
+        <title>
+            {% block title %}
+
+            {% endblock title %}
+            Sergio Sánchez
+        </title>
+        {% load static %}
+    <link rel="stylesheet" type ="text/css" href =" {% static 'css/style.css' %} " />
+    </head>
+    <body>
+
+        <header>
+
+            <div id="logotipo" >
+                <img src="{% static 'images/logoDjango.png' %}" />
+                <h1>
+                    Proyecto web (LP3)
+                </h1>
+            </div>
+        </header>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                    <a href="/inicio">Inicio</a>
+                    </li>
+                    <li>
+                    <a href="/saludo">Saludo</a>
+                    </li>
+                    <li>
+                    <a href="/rango">Mostrar números [a;b]</a>
+                    </li>
+                    <li>
+                    <a href="/rango2">Mostrar números(Parámetros) [a;b]</a>
+                    </li>
+                </ul>
+
+            </nav>
+            
+            
+        </div>
+        <div class ="barra">
+
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+
+        </div>
+
+        <div id="content">
+
+        <div class="box">
+
+            {% block content %}
+                <strong>
+                    Contenido por defecto en layout.html
+                </strong>
+            {% endblock content %}
+
+        </div>
+
+        </div>
+        <footer>
+            UNTELS - LENGUAJE DE PROGRAMACION III &copy;Sergio Sánchez 
+        </footer>
+
+    </body>
+</html>

@@ -2,24 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 layout = """
-    <h1> Proyecto web (LP3) </h1>
-    <h2> Sergio Sánchez </h2>
-    <hr/>
-    <ul>
-        <li>
-            <a href="/inicio">Inicio</a>
-        </li>
-        <li>
-            <a href="/saludo">Saludo</a>
-        </li>
-        <li>
-            <a href="/rango">Mostrar números [a;b]</a>
-        </li>
-        <li>
-            <a href="/rango2">Mostrar números(Parámetros) [a;b]</a>
-        </li>
-    </ul>
-    <hr/>
+    
 
 """
 def index(request):
