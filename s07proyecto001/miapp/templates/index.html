@@ -1,10 +1,31 @@
 {% extends 'layout.html' %}
 {%block title%}
-    Inicio 
+    {{inicio}}
 {%endblock title%}
 
 {%block content%}
+
+{% comment 'Datos de la pagina index'%}
+    En esta página se mostrará la bienvenida al
+    Además se mostrará XX YYY ZZZ 
+{% endcomment %}
 <h1 class="title"> Usando templates con Django </h1>
-<h2>        Página index         </h2> 
+<h2>Página {{titulo}} </h2> 
+
+{%if mensaje %}
+<p>
+    Mensaje:{{mensaje}}
+</p>
+{% else %}
+    <strong>
+        El mensaje no tiene contenido...
+    </strong>
+{%endif%}
+
+{% include 'estudiantesregistrados.html' with encabezado="Estudiantes Registrados" %}
+{% include 'filtros.html' with encabezado="Uso de Filtros" %}
+ <p>
+     Año: 2021
+ </p>   
 {%endblock content%}
 

@@ -1,0 +1,25 @@
+<br>
+<hr>
+</br>
+<p>
+    <strong>{{encabezado}} - (Método 1: Directa)</strong>
+</p>
+{{estudiantes}}
+
+<p>
+    <strong>{{encabezado}} - (Método 2: Utilizando FOR)</strong>
+</p>
+<ul>
+    {%for estudiante in estudiantes %}
+
+    <li>
+        {{forloop.counter}}.{{estudiante}}
+        {%empty%}
+        <li>
+            No hay estudiantes registrados...
+        </li>
+        
+    </li>
+
+    {%endfor%}
+</ul>

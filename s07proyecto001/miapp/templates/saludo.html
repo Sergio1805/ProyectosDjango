@@ -1,13 +1,18 @@
 {% extends 'layout.html' %}
 {%block title%}
-    Saludo 
+    {{saludo}} 
 {%endblock title%}
 {%block content%}
 
             <h1 class="title"> Bienvenidos a la UNTELS </h1>
             <h2> FACULTAD DE INGENIERÍA <h2>
-            <h3> INGENIERÍA DE SISTEMAS </h3>
-            <h4> LP3 Flor Cerdán </h4>
+            <h3> INGENIERÍA DE SISTEMAS </h3>             
+            <br>
+             Autor: {{nombre_autor}}
+            </br>
+            {%load filters %}
+            {{"Iniciando Curso LP3"|saludo|safe}}
+            
 {{block.super}}
 {%endblock content%}
             

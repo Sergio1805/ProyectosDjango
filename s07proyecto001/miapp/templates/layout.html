@@ -29,16 +29,16 @@
             <nav>
                 <ul>
                     <li>
-                    <a href="/inicio">Inicio</a>
+                    <a href="{% url 'inicio' %}">Inicio</a>
                     </li>
                     <li>
-                    <a href="/saludo">Saludo</a>
+                    <a href="{% url 'saludo' %}">Saludo</a>
                     </li>
                     <li>
-                    <a href="/rango">Mostrar números [a;b]</a>
+                    <a href="{% url 'rango' %}">Mostrar números [a;b]</a>
                     </li>
                     <li>
-                    <a href="/rango2">Mostrar números(Parámetros) [a;b]</a>
+                    <a href="{% url 'rango2' %}">Mostrar números(Parámetros) [a;b]</a>
                     </li>
                 </ul>
 
@@ -68,7 +68,7 @@
 
         </div>
         <footer>
-            UNTELS - LENGUAJE DE PROGRAMACION III &copy;Sergio Sánchez 
+            UNTELS - LENGUAJE DE PROGRAMACION III &copy;Sergio Sánchez {% now 'd/m/y h:m:s' %}
         </footer>
 
     </body>

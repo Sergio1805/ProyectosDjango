@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{%block title%}
+    {{rango}} 
+{%endblock title%}
+{%block content%}
+
+
+<h2> Números de [{{a}}] hasta [{{b}}] </h2>
+Resultado : <br>
+<ul>
+    {%for numero in numeros %}
+
+    <li>
+        {{numero}}
+        
+    </li>
+    {%empty%}
+        <li>
+            Rango vacío...
+        </li>
+
+    {%endfor%}
+</ul>
+
+            
+{{block.super}}
+{%endblock content%}
