@@ -25,5 +25,19 @@ urlpatterns = [
     path('rango/',views.rango, name = "rango"),
     path('rango2/',views.rango2, name = "rango2"),
     path('rango2/<int:a>',views.rango2, name = "rango2"),
+    
     path('rango2/<int:a>/<int:b>',views.rango2, name = "rango2"),
+    path('crear_articulo/<str:titulo>/<str:contenido>/<str:publicado>',views.crear_articulo, name="crear_articulo"),
+    path('buscar_articulo/<int:id>',views.buscar_articulo, name="buscar_articulo"),
+    path('editar_articulo/<int:id>',views.editar_articulo, name="editar_articulo"),
+    path('listar_articulos/',views.listar_articulos, name ='listar_articulos'),
+    path('eliminar_articulo/<int:id>',views.eliminar_articulo, name = "eliminar_articulo"), 
+    path('save_articulo/',views.save_articulo, name = "save_articulo"),
+    path('create_articulo/',views.create_articulo, name = "create_articulo"),
+
+    path('listar_autores/',views.listar_autores, name ='listar_autores'),
+    path('eliminar_autor/<int:id>',views.eliminar_autor, name = "eliminar_autor"), 
+    path('save_autor/',views.save_autor, name = "save_autor"),
+    path('create_autor/',views.create_autor, name = "create_autor"),
+
 ]
